@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/* eslint-enable ${1:rule} */$0</string>
+	<key>name</key>
+	<string>eslint-enable</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>ele</string>
+	<key>uuid</key>
+	<string>17C0795F-59E6-4A5C-8B54-45CC97DA2BB9</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>// eslint-disable-next-line ${1:rule}$0</string>
+	<key>name</key>
+	<string>eslint-disable-next-line</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>eldnl</string>
+	<key>uuid</key>
+	<string>027C2C13-8370-4F5B-B79B-C5280DA15B02</string>
+</dict>
+</plist>
