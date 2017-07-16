@@ -88,13 +88,37 @@ def get_marker_directory():
     return markerDir
 
 
+def command_exists(cmd_path):
+    return os.path.exists(cmd_path) and os.access(cmd_path, os.X_OK)
+
+
+def get_eslint_cmd():
+    project_dir = os.environ.get('TM_PROJECT_DIRECTORY', None)
+
+    if project_dir:
+        local_eslint_cmd = os.path.join(
+            os.path.abspath(project_dir),
+            'node_modules',
+            '.bin',
+            'eslint'
+        )
+
+    global_eslint_cmd = os.environ.get('TM_JAVASCRIPT_ESLINT_ESLINT', 'eslint')
+
+    eslint_cmd = local_eslint_cmd if command_exists(local_eslint_cmd) else global_eslint_cmd
+
+    return eslint_cmd
+
+
 def validate(quiet=False):
     # absolute path of this file, used to reference other files
     my_dir = os.path.abspath(os.path.dirname(__file__))
 
+    eslint_cmd = get_eslint_cmd()
+
     # build eslint args
     args = [
-        os.environ.get('TM_JAVASCRIPT_ESLINT_ESLINT', 'eslint'),
+        eslint_cmd,
         '-f',
         'compact',
         '--no-color',
